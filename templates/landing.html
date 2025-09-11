@@ -25,12 +25,60 @@
         <video controls>Your browser does not support the video tag.</video>
         <h1>Welcome to InnovaThink Corporation</h1>
         <p>Empowering businesses through innovative IT solutions</p>
+
+        <!-- Calculator Modal -->
+        <div id="calculator-modal" class="calculator-modal">
+            <div class="calculator">
+                <div class="calculator-display" id="calc-display">0</div>
+                <div class="calculator-buttons">
+                    <button class="calc-btn">7</button>
+                    <button class="calc-btn">8</button>
+                    <button class="calc-btn">9</button>
+                    <button class="calc-btn">/</button>
+                    <button class="calc-btn">4</button>
+                    <button class="calc-btn">5</button>
+                    <button class="calc-btn">6</button>
+                    <button class="calc-btn">*</button>
+                    <button class="calc-btn">1</button>
+                    <button class="calc-btn">2</button>
+                    <button class="calc-btn">3</button>
+                    <button class="calc-btn">-</button>
+                    <button class="calc-btn">0</button>
+                    <button class="calc-btn">.</button>
+                    <button id="calc-equals">=</button>
+                    <button class="calc-btn">+</button>
+                    <button id="calc-clear">C</button>
+                </div>
+            </div>
+        </div>
+        <button id="calculator-btn">Open Calculator</button>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>InnovaThink is an information technology-enabled services provider dedicated to optimizing and improving business infrastructure...</p>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    At <strong>InnovaThink</strong>, we are an information technology-enabled services provider 
+                    dedicated to optimizing and improving business infrastructure. 
+                </p>
+                <p>
+                    With a team of experienced IT professionals, we deliver innovative solutions 
+                    in consulting, integration, and enterprise systems support — helping businesses 
+                    transform and grow with technology.
+                </p>
+                <p>
+                    Our mission is to empower organizations with cutting-edge digital tools 
+                    and strategies that drive success.
+                </p>
+                <a href="#services" class="btn-learn-more">Learn More</a>
+            </div>
+            <div class="about-image">
+                <img src="{% static 'images/innovalogo.png' %}" alt="InnovaThink Office">
+            </div>
+        </div>
     </section>
+
 
     <section id="services">
         <h2>Our Services</h2>
@@ -47,12 +95,41 @@
         <p>Address: 4th Floor, CV Starr Ave, Philamlife Village, Las Piñas, 1740 Metro Manila, Philippines</p>
         <p>Email: info@innovathink.com.ph</p>
         <p>Phone: +63 2 123 4567</p>
+
+        <!-- Professional Chat Options -->
+        <div class="chat-container">
+            <h3>Chat with Us</h3>
+            <p>Reach us instantly through your favorite messaging app:</p>
+            <div class="chat-options">
+                <a href="https://m.me/YOUR_PAGE_ID" target="_blank" class="chat-link messenger">
+                    <img src="{% static 'images/messenger.png' %}" alt="Messenger">
+                    Messenger
+                </a>
+                <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="chat-link telegram">
+                    <img src="{% static 'images/telegram.png' %}" alt="Telegram">
+                    Telegram
+                </a>
+                <a href="viber://chat?number=%2B631234567890" target="_blank" class="chat-link viber">
+                    <img src="{% static 'images/viber.png' %}" alt="Viber">
+                    Viber
+                </a>
+            </div>
+        </div>
     </section>
+
+
 
     <footer>
         <p>&copy; 2025 InnovaThink Corporation. All rights reserved.</p>
     </footer>
 
     <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        // Toggle menu on bubble click
+        document.getElementById("chat-bubble").addEventListener("click", function() {
+            const menu = document.getElementById("chat-menu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        });
+    </script>
 </body>
 </html>

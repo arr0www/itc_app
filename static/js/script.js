@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
             video.parentNode.insertBefore(fallback, video);
         });
     }
+
+    // Calculator button functionality
+    const calcBtn = document.getElementById("calculator-btn");
+    if (calcBtn) {
+        calcBtn.addEventListener("click", function() {
+            alert("Hello world!");
+        });
+    }
 });
 
 console.log('InnovaThink Corporation website loaded.');

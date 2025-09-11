@@ -10,67 +10,61 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f5f7fa; /* Light grey-blue background */
+    padding-top: 90px; /* Prevents content hiding under sticky header */
 }
 
 /* Header and Navigation */
 header {
     background-color: #ffffff; /* White background to match logo */
-    color: #0055A4; /* Blue to match logo text */
-    padding: 1.5rem 0;
-    position: sticky;
+    color: #0055A4;
+    padding: 1.2rem 2rem;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 85, 164, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 10px rgba(0, 85, 164, 0.08); /* Subtle shadow */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e0e0e0; /* Light border for separation */
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .logo img {
-    height: 60px; /* Adjusted for logo visibility */
-    margin-left: 2rem;
+    height: 55px;
     transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-nav {
-    padding: 0 2rem;
+    transform: scale(1.05);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-}
-
-nav ul li {
-    margin-left: 2.5rem;
+    gap: 2rem;
 }
 
 nav ul li a {
-    color: #0055A4; /* Blue to match logo */
+    color: #0055A4; /* Always visible blue */
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 4px;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #003087; /* Darker blue for hover */
-    background-color: #e6f0fa; /* Light blue background on hover */
+    color: #003087;
+    background-color: #e6f0fa;
 }
 
 /* Hero Section */
 #hero {
     text-align: center;
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #e0e8f5 0%, #ffffff 100%); /* Gradient inspired by logo swoosh */
+    background: linear-gradient(135deg, #e0e8f5 0%, #ffffff 100%);
     position: relative;
     overflow: hidden;
 }
@@ -85,7 +79,7 @@ nav ul li a:hover {
 
 #hero h1 {
     font-size: 3rem;
-    color: #0055A4; /* Matches logo blue */
+    color: #0055A4;
     margin-bottom: 1rem;
     font-weight: 700;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
@@ -104,11 +98,12 @@ section {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    animation: fadeIn 1s ease-in;
 }
 
 section h2 {
     font-size: 2.2rem;
-    color: #0055A4; /* Matches logo blue */
+    color: #0055A4;
     margin-bottom: 2rem;
     text-align: center;
     font-weight: 600;
@@ -119,7 +114,7 @@ section h2::after {
     content: '';
     width: 50px;
     height: 3px;
-    background-color: #0055A4; /* Matches logo blue */
+    background-color: #0055A4;
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -128,7 +123,7 @@ section h2::after {
 }
 
 section:hover h2::after {
-    width: 70px; /* Expands underline on hover */
+    width: 70px;
 }
 
 section p, section ul {
@@ -145,26 +140,26 @@ section ul {
 }
 
 section ul li {
-    background-color: #ffffff; /* White background for cards */
+    background-color: #ffffff;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section ul li:hover {
     transform: translateY(-8px);
-    box-shadow: 0 6px 20px rgba(0, 85, 164, 0.15); /* Blue-tinted shadow */
+    box-shadow: 0 6px 20px rgba(0, 85, 164, 0.15);
 }
 
 section ul li strong {
-    color: #0055A4; /* Matches logo blue */
+    color: #0055A4;
     font-weight: 600;
 }
 
 /* Contact Section */
 #contact {
-    background-color: #f0f4f8; /* Light blue-grey */
+    background-color: #f0f4f8;
     text-align: center;
     padding: 3rem 2rem;
 }
@@ -175,14 +170,77 @@ section ul li strong {
     color: #333;
 }
 
+/* Chat Container */
+.chat-container {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chat-container h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #0055A4;
+    font-weight: 600;
+}
+
+.chat-container p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Chat Options Grid */
+.chat-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chat-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.chat-link img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Brand colors */
+.chat-link.messenger { background: #0084ff; }
+.chat-link.telegram { background: #29a9eb; }
+.chat-link.viber { background: #7360f2; }
+
+/* Hover effect */
+.chat-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 /* Footer */
 footer {
-    background-color: #0055A4; /* Blue footer to match logo */
+    background-color: #0055A4;
     color: white;
     text-align: center;
     padding: 1.5rem;
     font-size: 0.9rem;
-    border-top: 2px solid #003087; /* Darker blue divider */
+    border-top: 2px solid #003087;
 }
 
 /* Responsive Design */
@@ -194,17 +252,12 @@ footer {
 
     .logo img {
         height: 50px;
-        margin-left: 0;
         margin-bottom: 1rem;
     }
 
     nav ul {
         flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 0.8rem 0;
+        gap: 1rem;
     }
 
     #hero {
@@ -223,8 +276,8 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    section {
-        padding: 2rem 1rem;
+    .chat-link {
+        min-width: 100%;
     }
 }
 
@@ -234,6 +287,55 @@ footer {
     to { opacity: 1; }
 }
 
+/* Calculator modal styling */
+.calculator-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.calculator-display {
+    background: #222;
+    color: #0f0;
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.calculator-buttons button {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #eee;
+    transition: background 0.2s;
+}
+
+.calculator-buttons button:hover {
+    background: #ccc;
+}
+
+/* Prevent sections from being hidden behind sticky header */
 section {
-    animation: fadeIn 1s ease-in;
+    scroll-margin-top: 65px; /* adjust based on header height */
 }
