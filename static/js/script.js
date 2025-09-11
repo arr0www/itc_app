@@ -119,3 +119,33 @@ document.addEventListener('click', (e) => {
         if (index !== -1) createServicesPopup(services[index]);
     }
 });
+
+// ----- BACKGROUND MUSIC -----
+document.addEventListener("DOMContentLoaded", function() {
+    const music = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("music-toggle");
+    const icon = toggleBtn?.querySelector("i");
+
+    if (music) {
+        // start muted (browsers block autoplay with sound)
+        music.muted = true;
+        music.volume = 1.0; // softer default volume
+    }
+
+toggleBtn?.addEventListener("click", () => {
+    if (!music) return;
+
+    if (music.muted) {
+        music.muted = false;
+        music.volume = 0.5; // set safe volume
+        music.play().catch(err => console.log("Autoplay blocked:", err)); // 🔑 force playback
+        icon?.classList.remove("fa-volume-xmark");
+        icon?.classList.add("fa-volume-high");
+    } else {
+        music.muted = true;
+        icon?.classList.remove("fa-volume-high");
+        icon?.classList.add("fa-volume-xmark");
+    }
+});
+
+});
