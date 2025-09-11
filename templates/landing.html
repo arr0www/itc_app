@@ -1,108 +1,203 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnovaThink Corporation</title>
+    <meta name="description" content="InnovaThink Corporation - Empowering businesses through innovative IT solutions">
+    <meta name="robots" content="index, follow">
+    <title>Home - InnovaThink Corporation</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/favicon-32x32.jpg' %}" sizes="32x32">
+    <link rel="icon" href="{% static 'images/favicon-192x192.jpg' %}" sizes="192x192">
+    <link rel="apple-touch-icon" href="{% static 'images/favicon-180x180.jpg' %}">
+
+    <!-- JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="{% static 'images/innovalogo.png' %}" alt="InnovaThink Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About us</a></li>
+<body class="home">
+    <div id="page" class="site">
+        <!-- Header -->
+        <header id="masthead" class="site-header">
+            <div class="container-w d-flex justify-content-between align-items-center py-3">
+                <a href="/"><img src="{% static 'images/innovalogo.png' %}" alt="InnovaThink Logo"></a>
+                <nav class="d-none d-lg-flex">
+                    <ul class="menu d-flex gap-4 m-0 p-0 list-unstyled">
+                        <li class="menu-item"><a href="/">Home</a></li>
+                        <li class="menu-item"><a href="#about">About Us</a></li>
+                        <li class="menu-item"><a href="#services">Services</a></li>
+                        <li class="menu-item"><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <!-- Mobile Burger -->
+                <div class="d-lg-none" id="burger-menu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Nav -->
+        <nav id="mobile-nav" class="mobile-site-header" hidden>
+            <button id="close-button">&times;</button>
+            <ul class="mobile-nav-menu list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
 
-    <section id="hero">
-        <video controls>Your browser does not support the video tag.</video>
-        <h1>Welcome to InnovaThink Corporation</h1>
-        <p>Empowering businesses through innovative IT solutions</p>
-    </section>
+        <!-- Hero Section -->
+        <section class="home-banner position-relative">
+            <video autoplay loop muted playsinline class="w-100">
+                <source src="{% static 'videos/ITC-BG-Site.mp4' %}" type="video/mp4">
+            </video>
+            <div class="banner-content text-center text-white position-absolute top-50 start-50 translate-middle">
+                <h1>Thinking Ahead Through Innovations.</h1>
+                <p class="mt-3">“Customer satisfaction drives our commitment to excellence, ensuring every interaction is met with top-tier quality and dedication.”</p>
+            </div>
+        </section>
 
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <div class="about-text">
-                <h2>About Us</h2>
-                <p>
-                    At <strong>InnovaThink</strong>, we are an information technology-enabled services provider 
-                    dedicated to optimizing and improving business infrastructure. 
-                </p>
-                <p>
-                    With a team of experienced IT professionals, we deliver innovative solutions 
-                    in consulting, integration, and enterprise systems support — helping businesses 
-                    transform and grow with technology.
-                </p>
-                <p>
-                    Our mission is to empower organizations with cutting-edge digital tools 
-                    and strategies that drive success.
-                </p>
-                <a href="#services" class="btn-learn-more">Learn More</a>
+        <!-- About Section -->
+        <section id="about" class="about-section py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h3>Who We Are</h3>
+                    <h2>About InnovaThink Corporation</h2>
+                </div>
+                <div class="row align-items-center">
+                    <div class="mb-4 mb-lg-0">
+                        <p>At <strong>InnovaThink</strong>, we are an information technology-enabled services provider dedicated to optimizing and improving business infrastructure.</p>
+                        <p>With a team of experienced IT professionals, we deliver innovative solutions in consulting, integration, and enterprise systems support — helping businesses transform and grow with technology.</p>
+                        <p>Our mission is to empower organizations with cutting-edge digital tools and strategies that drive success.</p>
+                        <a href="#services" class="main-btn">Learn More</a>
+                    </div>
+                </div>
             </div>
-            <div class="about-image">
-                <img src="{% static 'images/innovalogo.png' %}" alt="InnovaThink Office">
-            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h3>Our Services</h3>
+                    <h2>Empowering Your Business Growth</h2>
+                </div>
+<div class="row g-4">
+    <div class="col-md-6 col-lg-3">
+        <div class="services-item text-center p-3 border rounded">
+            <i class="fa-solid fa-lightbulb mb-3" style="font-size: 50px; color: #0055A4;"></i>
+            <h4>IT Consulting Services</h4>
+            <p>Review, assess, and recommend viable solutions to optimize your infrastructure.</p>
         </div>
-    </section>
-
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li><strong>IT Consulting Services</strong>: Review, assess, and recommend viable solutions...</li>
-            <li><strong>Systems Integration</strong>: Deliver solutions with technology experts...</li>
-            <li><strong>Professional Services</strong>: Skilled professionals delivering business value...</li>
-            <li><strong>Service Management</strong>: End-to-end ITIL-based solutions for efficiency...</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Address: 4th Floor, CV Starr Ave, Philamlife Village, Las Piñas, 1740 Metro Manila, Philippines</p>
-        <p>Email: info@innovathink.com.ph</p>
-        <p>Phone: +63 2 123 4567</p>
-
-        <!-- Professional Chat Options -->
-        <div class="chat-container">
-            <h3>Chat with Us</h3>
-            <p>Reach us instantly through your favorite messaging app:</p>
-            <div class="chat-options">
-                <a href="https://m.me/YOUR_PAGE_ID" target="_blank" class="chat-link messenger">
-                    <img src="{% static 'images/messenger.png' %}" alt="Messenger">
-                    Messenger
-                </a>
-                <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="chat-link telegram">
-                    <img src="{% static 'images/telegram.png' %}" alt="Telegram">
-                    Telegram
-                </a>
-                <a href="viber://chat?number=%2B631234567890" target="_blank" class="chat-link viber">
-                    <img src="{% static 'images/viber.png' %}" alt="Viber">
-                    Viber
-                </a>
-            </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="services-item text-center p-3 border rounded">
+            <i class="fa-solid fa-puzzle-piece mb-3" style="font-size: 50px; color: #0055A4;"></i>
+            <h4>Systems Integration</h4>
+            <p>Deliver solutions with technology experts for effective business operations.</p>
         </div>
-    </section>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="services-item text-center p-3 border rounded">
+            <i class="fa-solid fa-briefcase mb-3" style="font-size: 50px; color: #0055A4;"></i>
+            <h4>Professional Services</h4>
+            <p>Skilled professionals delivering business value to enterprises.</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="services-item text-center p-3 border rounded">
+            <i class="fa-solid fa-cogs mb-3" style="font-size: 50px; color: #0055A4;"></i>
+            <h4>Service Management</h4>
+            <p>End-to-end ITIL-based solutions for operational efficiencies.</p>
+        </div>
+    </div>
+</div>
 
+            </div>
+        </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="contact py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.588032748575!2d120.9786423!3d14.4508894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cd69b03b9b55%3A0xa4c0c0623e16e657!2sInnovaThink%20Corporation!5e0!3m2!1sen!2sph!4v1718084480064!5m2!1sen!2sph" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="col-lg-2">
+                        <h6>Explore</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5">
+                        <h6>Contact</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="https://maps.app.goo.gl/Ny2XQJvsuzp52Grg7" target="_blank"><i class="fa-solid fa-location-dot"></i> Vista Mall Las Piñas IT Hub...</a></li>
+                            <li><i class="fa-solid fa-clock"></i> Mon-Fri 8:30am - 5:30pm</li>
+                            <li><a href="tel:+0288404821"><i class="fa-solid fa-phone"></i> (02) 8840 4821</a></li>
+                            <li><a href="mailto:info@innovathink.com.ph"><i class="fa-solid fa-envelope"></i> info@innovathink.com.ph</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-    <footer>
-        <p>&copy; 2025 InnovaThink Corporation. All rights reserved.</p>
-    </footer>
+                <div class="row mt-4 justify-content-between align-items-center">
+                    <div class="col-md-4">
+                        <p>© 2025 <a href="/">InnovaThink Corporation</a>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="d-flex gap-2 justify-content-center justify-content-md-end list-unstyled mb-0">
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/legal-notice">Legal Notice</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <ul class="contact-icons list-unstyled d-flex gap-2 mb-0">
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank" aria-label="Messenger">
+                                    <img src="{% static 'images/messenger.png' %}" alt="Messenger">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Viber">
+                                    <img src="{% static 'images/viber.png' %}" alt="Viber">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Telegram">
+                                    <img src="{% static 'images/telegram.png' %}" alt="Telegram">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-    <script src="{% static 'js/script.js' %}"></script>
-    <script>
-        // Toggle menu on bubble click
-        document.getElementById("chat-bubble").addEventListener("click", function() {
-            const menu = document.getElementById("chat-menu");
-            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-        });
-    </script>
+                </div>
+            </div>
+        </section>
+                <!-- Back to Top Button -->
+        <a href="#" id="back-to-top" class="back-to-top-content">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
+    </div>
 </body>
 </html>
